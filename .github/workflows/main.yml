@@ -23,4 +23,4 @@ jobs:
 
       - name: Deploy to Server
         run: |
-              cd /root/abdullah/
+            sudo cd /root/abdullah/
