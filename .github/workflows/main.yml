@@ -19,6 +19,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          scirpts:
+          scirpt: |
               docker image pull hello-world
               docker container run -d --name abdullah-container -p 8087:5000 hello-world
