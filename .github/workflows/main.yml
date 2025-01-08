@@ -23,9 +23,6 @@ jobs:
 
       - name: Deploy to Server
         run: |
-              cd /
-              cd root
-              cd abdullah
-              cd Docker-01
+              cd /root/abdullah/Docker-01
               docker pull busybox
               docker container run -d --name my-container -p 80:5000 busybox
