@@ -18,17 +18,12 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-        
-
 
 
       - name: Deploy to Server
         run: |
               ssh -T -o StrictHostKeyChecking=no root@168.119.254.41 << 'EOF'
-              cd ~/abdullah/Test
-              git pull origin main
-              npm install
-              nohup npm start &> output.log &
+              cd ~/abdullah/docker-01
+              docker pull busybox
+              docker container run -d --name my-container -p 80:5000 busybox
               EOF
