@@ -23,5 +23,5 @@ jobs:
 
       - name: Deploy to Server
         run: |
-              docker pull busybox
-              docker container run -d --name my-container -p 8087:5000 busybox
+              docker pull hello-world
+              docker container run -d --name abdullah-container -p 8087:5000 hello-world
