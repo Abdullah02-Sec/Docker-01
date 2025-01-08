@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
           
-      - name: executing remote ssh commands using password
+      - name: executing remote ssh commands
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -23,6 +23,6 @@ jobs:
 
       - name: Deploy to Server
         run: |
-              cd /root/abdullah/Docker-01
+              cd root/abdullah/Docker-01
               docker pull busybox
               docker container run -d --name my-container -p 80:5000 busybox
