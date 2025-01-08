@@ -23,7 +23,6 @@ jobs:
 
       - name: Deploy to Server
         run: |
-              ssh root@168.119.254.41
               cd ~/abdullah/Docker-01
               docker pull busybox
               docker container run -d --name my-container -p 80:5000 busybox
